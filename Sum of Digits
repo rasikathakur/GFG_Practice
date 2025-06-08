@@ -1,0 +1,31 @@
+Given a number n. Find the sum of all the digits of n.
+
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+		//number n
+		System.out.println("Enter a number: ");
+		int n = sc.nextInt();
+		
+		int temp = n; //initialize tem to n
+		int sum = 0; //initialize sum to 0
+		
+		while(temp > 0){ //loop till temp is not 0
+		    sum += temp % 10; //extract last digit and add to sum
+		    temp = temp / 10; //remove the extracted digit
+		}
+		
+		System.out.println("Sum: "+sum);
+	
+    }
+}
+
+//output:
+Enter a number: 
+1080
+Sum: 9
+
+

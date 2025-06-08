@@ -1,0 +1,65 @@
+// Given two integers n and m. The problem is to find the number closest to n and divisible by m. If there is more than one such number, then output the one having the maximum absolute value.
+
+
+import java.util.*;
+
+class Main {
+    
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		//number n
+		System.out.println("Enter n: ");
+		int n = sc.nextInt();//n=3
+		//divisible by number m
+		System.out.println("Enter m");
+		int m = sc.nextInt();//m=6
+		
+		int q = n/m; 
+		
+		int n1 = q*m; 
+		
+		int n2;
+		if(n*m > 0){ //n*m = 18 >0 true
+		    n2 = m * (q+1); //n2 = 6 * (0+1) = 6
+		}else{
+		    n2 = m * (q-1);
+		}
+	
+		
+		if(Math.abs(n-n1) > Math.abs(n-n2)){
+		    System.out.println("Closest number to "+ n +" divisible by "+ m +" is "+n1);
+		}else if(Math.abs(n-n1) < Math.abs(n-n2)){//n-n1 = 3-0=3 < n-n2 = 3-6 = 3
+		    System.out.println("Closest number to "+ n +" divisible by "+ m +" is "+n2);
+		}else{
+		    if(Math.abs(n1) > Math.abs(n2)){
+		        System.out.println("Closest number to "+ n +" divisible by "+ m +" is "+n1);
+		    }else{
+		        System.out.println("Closest number to "+ n +" divisible by "+ m +" is "+n2);
+		    }
+		}
+		
+	}
+}
+
+//output:
+Testcase 1:
+Enter n: 
+3
+Enter m
+6
+Closest number to 3 divisible by 6 is 6
+
+Testcase 2:
+Enter n: 
+-15
+Enter m
+6
+Closest number to -15 divisible by 6 is -18
+
+Testcase 3:
+Enter n: 
+6
+Enter m
+4
+Closest number to 6 divisible by 4 is 8
+

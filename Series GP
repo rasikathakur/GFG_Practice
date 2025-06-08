@@ -1,0 +1,97 @@
+//GP (Geometric Progression) Series
+// Given two integers a and r i.e. first term and common ratio of a GP series. Find nth term of series.
+//Note: as the answer can be rather large print its modulo of 10000000007(10^9+7)
+
+import java.util.*;
+
+class Main{
+	public static void main(String args[]){
+		final long MOD = 1000000007;
+		Scanner sc = new Scanner(System.in);
+		//first term
+		System.out.println("Enter First Term: ");
+		long a = sc.nextLong();
+		//common ratio
+		System.out.println("Enter Common Ratio: ");
+		long r = sc.nextLong();
+		//term
+		System.out.println("Enter term to find: ");
+		int n = sc.nextInt();
+		long arr[] = new long[n];
+		arr[0] = a % MOD;
+		for(int i=1; i<n; i++){
+			arr[i] = (arr[i-1]*r) % MOD;
+		}
+		System.out.println("GP Series");
+		for(int i=0; i<n; i++){
+			System.out.print(arr[i]+" ");
+		}
+
+		System.out.println("\n\nThe nth term of GP series is "+ arr[n-1]);
+	}
+}
+
+//output:
+
+Enter First Term: 
+2
+Enter Common Ratio: 
+2
+Enter term to find: 
+4
+GP Series
+2 4 8 16 
+
+The nth term of GP series is 16
+
+
+
+//optimized version
+
+// Formula: Tn=a⋅r^(n−1) mod10^9+7
+import java.util.*;
+
+class Main {
+    public static long MOD = 1000000007; //10^9+7
+	public static long power(long base, long exp){//r^n-1 finding
+		long result = 1; //initially result=1 because any number ^0 is always 1 so the result will be >=1
+		base = base % MOD; //hande too large ratios 
+		while(exp>0){ //loop till exp > 0 because any number ^0 = 1
+			if((exp&1) == 1){ //check whether exp lsb is odd
+				result = (base * result) % MOD; //for odd lsb's current result * current base  
+			}
+			base = (base * base) % MOD; //square the base 
+			exp>>=1;//current exp shift right by 1 
+		}	
+		return result;
+			
+	}
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		//first term a
+		System.out.println("Enter 1st term: ");
+		long a = sc.nextLong();
+		//common ratio r
+		System.out.println("Enter common ratio");
+		long r = sc.nextLong();
+		//term to find n
+		System.out.println("Enter nth term to find: ");
+		long n = sc.nextLong();
+		//r^n-1
+		long r_pow = power(r, n-1);
+		// Tn=a⋅r^(n−1) mod10^9+7
+		long nth_term = (a % MOD * r_pow) % MOD;
+
+		System.out.println("The nth term: " + nth_term);
+	}
+}
+
+//output:
+Enter 1st term: 
+2
+Enter common ratio
+2
+Enter nth term to find: 
+10
+The nth term: 1024
+

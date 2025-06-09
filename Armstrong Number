@@ -39,3 +39,20 @@ class Main{
 // 303
 // The given number 303 is not an Armstrong number..!
 
+
+
+// User function Template for Java
+class Solution {
+    static boolean armstrongNumber(int n) {
+        // code here
+        int n1 = n/100;
+        int n2 = (n/10) % 10;
+        int n3 = n%10;
+        
+        if((Math.pow(n1, 3)+Math.pow(n2, 3)+Math.pow(n3, 3)) == n){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}

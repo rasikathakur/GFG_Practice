@@ -25,3 +25,17 @@ Enter a Number:
 2
 2 4 6 8 10 12 14 16 18 20 
 
+
+
+// User function Template for Java
+class Solution {
+    static ArrayList<Integer> getTable(int n) {
+        ArrayList<Integer> res = new ArrayList<>();
+        for(int i = 1; i<=10; i++){
+            res.add(n*i);
+        }
+        
+        return res;
+        
+    }
+}

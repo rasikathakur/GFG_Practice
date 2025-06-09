@@ -1,0 +1,26 @@
+Given two numbers a and b, find kth digit from right of ab.
+
+
+class Solution {
+    static long kthDigit(int a, int b, int k) {
+        BigInteger base = BigInteger.valueOf(a);
+        BigInteger res = base.pow(b);
+        
+        String str_res = res.toString();
+        
+        int len = str_res.length();
+        if(k>len) return -1;
+        
+        return str_res.charAt(len - k) - '0';
+    }
+}
+
+
+//output:
+
+Input: a = 3, b = 3, k = 1
+Output: 7
+Explanation: 3^3 = 27 and 1st digit from right is 7
+Input: a = 5, b = 2, k = 2
+Output: 2
+Explanation: 5^2 = 25 and second digit from right is 2.

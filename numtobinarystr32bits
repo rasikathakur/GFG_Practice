@@ -1,0 +1,20 @@
+// You are given an integer n, you need to return its binary representation in the form of a string.
+// Note: String must contain 32 bits.
+
+class Solution {
+    static String getBinaryRep(int n) {
+        StringBuilder binaryStr = new StringBuilder();
+        
+        for(int i = 31; i >= 0; i--){ //32 bits
+            int bit = (n >> i) & 1; //right shift number by ith position and mask lsb by & 1
+            binaryStr.append(bit);//append each bit to stringbuilder
+        }
+        
+        return binaryStr.toString();//return 32 bits string with starting zeroes
+    }
+}
+
+//output:
+Input: n = 2
+Output: 00000000000000000000000000000010
+Explanation: The binary representation of 2 is '10', so it can be represent as 00000000000000000000000000000010 in 32 bits.

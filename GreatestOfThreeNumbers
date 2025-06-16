@@ -1,0 +1,21 @@
+// Given 3 numbers A, B and C. Find the greatest number among them.
+
+class Solution {
+    int greatestOfThree(int A, int B, int C) {
+        
+        if(A > B && A >C){
+            return A;
+        }else if(B > A && B >C){
+            return B;
+        }else{
+            return C;
+        }
+        
+    }
+}
+
+//output:
+Input: A = 10, B = 3, C = 2
+Output: 10
+Explanation:
+10 is the greatest among the three.

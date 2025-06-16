@@ -1,0 +1,13 @@
+// Given a string str containing only lowercase letters, generate a string with the same letters, but in uppercase.
+class Solution {
+    String to_upper(String str) {
+        
+        return str.toUpperCase();
+        
+    }
+}
+
+//output:
+Input:
+str = "geeks"
+Output: GEEKS

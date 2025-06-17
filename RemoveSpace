@@ -1,0 +1,30 @@
+// Given a string, remove all spaces from it. For example "g e e k" should be converted to "geek" and " g e " should be converted to "ge". The idea is to traverse the string from left to right and ignore spaces while traversing. We need to keep track of two indexes, one for the current character being red and the other for the current index in the output.
+import java.util.*;
+class Main {
+    public static String spaceRemoval(String str){
+        int n = str.length();
+        String withoutSpace = "";
+        char temp;
+        for(int i = 0; i < n; i++){
+            temp = str.charAt(i);
+            if(temp != ' '){
+                withoutSpace+=temp;
+            }
+        }
+        return withoutSpace;
+    }
+    public static void main(String[] args) {
+        System.out.println("Enter string: ");
+        Scanner sc = new Scanner(System.in);
+        String inputString = sc.nextLine();
+        String outputString = Main.spaceRemoval(inputString);
+        System.out.println("String with Space : "+ inputString);
+        System.out.println("String without Space : "+ outputString);
+    }
+}
+
+//output:
+Enter string: 
+g e e k
+String with Space : g e e k
+String without Space : geek

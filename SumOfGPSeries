@@ -1,0 +1,20 @@
+//Given n, a and r as the number of terms, first term and common ratio respectively of an Geometric Progression Series. Find the sum of the series upto nth term.
+
+class Solution {
+    public long sum_of_gp(long n, long a, long r) {
+        
+        if(r == 1){
+            return a * n;
+        }else{
+            return (long)(a * (Math.pow(r, n) - 1) / (r - 1));
+        }        
+    }
+}
+
+
+//Output:
+
+Input: 3 3 2
+Output: 21
+Explanation: Series upto 3td term is
+3 6 12, so sum will be 21.

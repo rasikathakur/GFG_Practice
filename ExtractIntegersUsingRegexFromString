@@ -1,0 +1,28 @@
+// Given a string str, extract all integers words from it.
+
+
+import java.util.*;
+class Main {
+    
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a String: ");
+        String sentence = sc.nextLine();
+        String splitWords[] = sentence.split("[^0-9]+");
+        for(String i : splitWords){
+            System.out.println(i+" ");
+        }
+        
+    }
+}
+
+//output:
+
+
+
+Input: str = "1Hello2   &* how  are y5ou"
+Output: 1 2 5
+
+Input: str = "Hey everyone, I have 500 rupees and I would spend a 100"
+Output: 500 100

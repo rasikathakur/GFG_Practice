@@ -1,0 +1,31 @@
+//Given a string. Count the number of Camel Case characters in it.
+
+
+class Sol {
+    int countCamelCase(String s) {
+        int n = s.length();
+        int count = 0;
+        char ch;
+        for(int i = 0; i < n; i++){
+            ch = s.charAt(i);
+            if(ch >= 'A' && ch <= 'Z'){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+//output:
+
+Input:
+S = "ckjkUUYII"
+Output: 5
+Explanation: Camel Case characters present:
+U, U, Y, I and I.
+
+Input: 
+S = "abcd"
+Output: 0
+Explanation: No Camel Case character
+present.

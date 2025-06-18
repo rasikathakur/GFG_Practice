@@ -1,0 +1,21 @@
+//Given an array arr[] containing strings of names. Your task is to return the longest string. If there are multiple names of the longest size, return the first occurring name.
+class Solution {
+    public String longest(List<String> arr) {
+        String current = "";
+        String res = arr.get(0);
+        for(int i = 1; i < arr.size(); i++){
+            current = arr.get(i);
+            if(current.length() > res.length()){
+                res = current;
+            }
+        }
+        return res;
+        
+    }
+}
+
+// Output :
+
+Input: arr[] = ["Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks"]
+Output: "GeeksforGeeks"
+Explanation: name "GeeksforGeeks" has maximum length among all names.

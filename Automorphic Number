@@ -1,0 +1,28 @@
+// Given a number N, check whether the number is Automorphic number or not.
+// A number is called Automorphic number if and only if its square ends in  has the same last digit as the number itself.
+
+class Solution {
+    public String is_AutomorphicNumber(int n) {
+        
+        int lastDigitOfN = n;
+        lastDigitOfN = lastDigitOfN%10;
+        
+        int sqrOfDigit = n*n;
+        int lastDigitOfSqr = sqrOfDigit;
+        lastDigitOfSqr = lastDigitOfSqr%10;
+        
+        if(lastDigitOfSqr == lastDigitOfN){
+            return "Automorphic";
+        }
+        
+        return "Not Automorphic";
+        
+    }
+}
+
+//output
+
+Input: N = 76
+Output: Automorphic
+Explanation: 762 = 5776 which ends with 
+6 which was also the last digt in original number therefore it is a automorphic number.

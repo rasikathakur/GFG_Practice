@@ -1,0 +1,30 @@
+// For a given number N. Print the pattern in the following form: 1 121 12321 1234321 for N = 4.
+
+class Solution {
+    public static ArrayList<String> numberPattern(int N) {
+        ArrayList<String> arr = new ArrayList<String>();
+        for(int i = 1; i <= N; i++){
+            StringBuilder sb = new StringBuilder();
+            for(int j = 1; j <= i; j++){
+                sb.append(j);
+            }
+            for(int j = i-1; j >= 1; j--){
+                sb.append(j);
+            }
+            arr.add(sb.toString());
+        }
+        
+        return arr;
+        
+    }
+}
+
+// Output:
+
+Input:
+N = 3
+Output:
+1 121 12321
+Explanation:
+For N = 3 we will print the 3 strings 
+according to the pattern.

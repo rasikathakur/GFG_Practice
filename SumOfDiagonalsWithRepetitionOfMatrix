@@ -1,0 +1,23 @@
+// Given a square matrix of size n×n. Your task is to calculate the sum of its diagonals.
+ 
+class Solution {
+    public int DiagonalSum(int[][] matrix) {
+        int sum = 0;
+        int n = matrix.length;
+        for(int i = 0; i < matrix.length; i++){
+            sum += matrix[i][i];
+            sum += matrix[i][n-1-i];
+            
+        }
+        
+        return sum;
+        
+        
+    }
+}
+
+//output:
+
+Input: matrix = {{1, 1, 1}, 
+{1, 1, 1}, {1, 1, 1}}
+Output: 6

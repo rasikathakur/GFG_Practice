@@ -1,0 +1,26 @@
+// Given a list of characters, merge all of them into a string.
+
+class Solution {
+    public String chartostr(char arr[], int N) {
+        StringBuilder s = new StringBuilder();
+        for(char ch : arr){
+            s.append(ch);
+        }
+        return s.toString();
+    }
+}
+
+//output:
+Input:
+N = 13
+Char array = g e e k s f o r g e e k s
+Output: geeksforgeeks 
+Explanation: combined all the characters
+to form a single string.
+
+Input:
+N = 4
+Char array = e e b a
+Output: eeba
+Explanation: combined all the characters
+to form a single string.

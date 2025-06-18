@@ -1,0 +1,17 @@
+// Given a number n, find the cube root of n.
+
+// Note: We need to print the floor value of the result.
+
+
+class Solution {
+    static int cubeRoot(int n) {
+        return (int) Math.cbrt(n);
+        
+    }
+};
+
+//output:
+
+Input: n = 3
+Output: 1
+Explanation: Cube root of 3 is 1.442 = 1

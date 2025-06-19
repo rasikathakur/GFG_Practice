@@ -1,0 +1,31 @@
+//You are given an integer n. You need to convert all zeroes of n to 5.
+
+class Solution {
+    int convertfive(int num) {
+        int digit;
+        int convertedNum = 0;
+        int place = 1;
+        if(num == 0){
+            return 5;
+        }
+        while(num > 0){
+            digit = num % 10;
+            if(digit == 0){
+                digit = 5;
+            }
+            convertedNum = convertedNum + digit * place;
+            place = place * 10;
+            num = num / 10;
+        }
+       return  convertedNum;
+    }
+}
+
+//output:
+
+Input: n = 1004
+Output: 1554
+Explanation: There are two zeroes in 1004 on replacing all zeroes with 5, the new number will be 1554.
+Input: n = 121
+Output: 121
+Explanation: Since there are no zeroes in 121, the number remains as 121.

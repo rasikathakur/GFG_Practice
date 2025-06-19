@@ -1,0 +1,38 @@
+//Given a string s of lowercase alphabets. The task is to find the maximum occurring character in the string s. If more than one character occurs the maximum number of times then print the lexicographically smaller character.
+
+
+class Solution {
+    public static char getMaxOccuringChar(String s) {
+        int freq[] = new int[26]; //to store count of each character from a - z
+        
+        for(char c : s.toCharArray()){
+            freq[c-'a']++; // eg. c = e 'e' - 'a' = 4 so, freq[4]++ will increase e count
+        }
+        
+        int count = 0; //initialized to 0
+        char result = 'z' + 1; //intialized to something greater than z
+            
+        for(int i = 0; i < 26; i++){ //loop through all characters from a to z
+            if(freq[i] > count){ //if current count less than current char freq 
+                count = freq[i]; //then update count to freq[i]
+                result = (char)(i + 'a'); //and update result casted to char numeric operation
+                //eg. if i = 1 then 'a' = 97(ASCII stored) so 97+1 = 98 then result = b
+            }else if(freq[i] == count && (char) (i + 'a') < result){
+                //else if freq[i] is equal to count and i+a casrted to char is less than result
+                result = (char)(i + 'a'); //then update result casted to char numeric operation
+            }
+        }
+        
+        return result;
+        
+    }
+}
+
+//output:
+
+Input: s = "testsample"
+Output: 'e'
+Explanation: e is the character which is having the highest frequency.
+Input: s = "output"
+Output: 't'
+Explanation:  t and u are the characters with the same frequency, but t is lexicographically smaller.

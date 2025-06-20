@@ -1,0 +1,51 @@
+// Given a number n. Your task is to check whether it is fascinating or not.
+
+// Fascinating Number: A number with 3 or more digits is considered fascinating if, when it is multiplied by 2 and 3, and the resulting products are concatenated with the original number, the final sequence contains all the digits from 1 to 9 exactly once.
+
+// Note:  If a number is fascinating, return true. Otherwise, return false.
+
+class Solution {
+    boolean fascinating(long n) {
+        //check number is 3 digits
+        if(n < 100){
+            return false;
+        }
+        
+        //multifly number by 2 and 3 and concatenate with original number
+        String concatenated = ""+n+(n*2)+(n*3);
+        
+        //check if it has exact 9 numbers
+        if(concatenated.length()!=9){
+            return false;
+        }
+        
+        int freq[] = new int[10];
+        //increase frequency/count of each digit in array by 1 if found
+        for(char c : concatenated.toCharArray()){
+            int digit = c - '0';
+            freq[digit]++;
+        }
+        
+        if(freq[0] != 0){
+            return false;
+        }
+        
+        //check if each digit appears only once
+        for(int i = 1; i <=9; i++){
+            if(freq[i] != 1){
+                return false;
+            }
+        }
+        
+        return true;
+    }
+}
+
+// Output:
+
+Input: n = 192
+Output: true
+Explanation: After multiplication with 2 and 3, and concatenating with original number, number will become 192384576 which contains all digits from 1 to 9.
+Input: n = 853
+Output: false
+Explanation: It is not a fascinating number

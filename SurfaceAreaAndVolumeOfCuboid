@@ -22,6 +22,18 @@ class Main {
     }
 }
 
+
+class Solution {
+    public int[] find(int l, int b, int h) {
+        int sv[] = new int[2];
+        sv[0] = 2 * ((l*b)+(b*h)+(h*l));
+        sv[1] = l*b*h;
+        
+        return sv;
+        
+    }
+}
+
 //output:
 // Input: l = 2, b = 3, h = 4
 // Output: 52 24        

@@ -1,0 +1,23 @@
+// Given a positive integer n, check if it is perfect square or not.
+// NOTE: Try to solve the question using only addition and subtraction operation.
+
+// User function Template for Java
+class Solution {
+    static long isPerfectSquare(long n) {
+        int i = 1;
+        while(n > 0){
+            n -= i;
+            i += 2;
+        }
+        
+        return (n==0 ? 1: 0);
+    }
+}
+
+// Output:
+
+Input: n = 35
+Output: 0 
+Explanation: 35 is not perfect
+square because sqrt(35) = 5 but
+5*5 !=35.

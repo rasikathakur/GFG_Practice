@@ -1,4 +1,30 @@
 // Given a number n, write a program to print a diamond shape with 2n rows.
+
+class Solution {
+
+     void printDiamond(int n) {
+        StringBuilder sb = new StringBuilder();
+
+        // Upper triangle
+        for (int i = 0; i < n; i++) {
+            sb.append(" ".repeat(n - i - 1));
+            sb.append("* ".repeat(i + 1));
+            sb.append("\n");
+        }
+
+        // Lower triangle
+        for (int i = 0; i < n; i++) {
+            sb.append(" ".repeat(i));
+            sb.append("* ".repeat(n - i));
+            sb.append("\n");
+        }
+
+        // Final single print
+        System.out.print(sb.toString());
+    }
+        
+}
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {

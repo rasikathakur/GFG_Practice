@@ -1,0 +1,31 @@
+//Given an array arr of non-negative integers, return the maximum product of two numbers possible.
+
+
+class Solution {
+    public static int maxProduct(int[] arr) {
+        
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        
+        for(int num : arr){
+            if(num > first){
+                second = first;
+                first = num;
+            }else if(num > second){
+                second = num;
+            }
+        }
+        
+        return first * second;
+        
+    }
+}
+
+//Output:
+
+Input: arr[] = [1, 4, 3, 6, 7, 0] 
+Output: 42
+Explanation: 6 and 7 have the maximum product.
+Input: arr[] = [1, 100, 42, 4, 23]
+Output: 4200
+Explanation:  42 and 100 have the maximum product.

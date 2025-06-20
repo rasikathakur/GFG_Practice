@@ -1,0 +1,19 @@
+//Given n, a and d as the number of terms, first term and common difference respectively of an Arthimetic Series. Find the sum of the series upto nth term.
+ 
+
+class Solution {
+    public int sum_of_ap(int n, int a, int d) {
+        return (n * (2 * a + (n - 1) * d)) / 2;
+    }
+}
+
+//n * (2* a + (n-1) * d)
+//---------------------
+//          2
+
+
+//Output:
+
+Input: 5 1 3
+Output: 35
+Explanation: Series upto 5th term is

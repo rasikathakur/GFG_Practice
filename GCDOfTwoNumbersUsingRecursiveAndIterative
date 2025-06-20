@@ -1,0 +1,31 @@
+// Given two positive integers a and b, find GCD of a and b.
+
+// Note: Don't use the inbuilt gcd function
+
+
+class Solution {
+    public static int gcd(int a, int b) {
+        //recursive
+        if(b==0){
+            return a;
+        }
+        
+        return gcd(b, a%b);
+        
+        //iterative
+        while(b != 0){
+            int temp = b;
+            b = a%b;
+            a = temp;
+        }
+        
+        return a;
+    }
+}
+
+
+//Output:
+
+Input: a = 3, b = 6
+Output: 3
+Explanation: GCD of 3 and 6 is 3
